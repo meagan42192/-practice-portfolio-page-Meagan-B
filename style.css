@@ -80,6 +80,11 @@ img:hover {
 
 /* About */
 
+#about_me {
+    border: 3px solid #f4d35e;
+    background: #fefae0;
+}
+
 .about-me-text {
     line-height: 1.8;
     color: #355070;
