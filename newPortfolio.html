@@ -1,40 +1,3 @@
-<!-- Instructions
-For this practice, you’ll be creating a profile page for your portfolio. You’ll plan your
-profile page, create the HTML structure, and write an external CSS file. You’ll use
-everything you’ve learned so far about HTML & CSS in order to create your page.
-
-Tasks
-
-Step 1: Plan Your Profile Page
-Think about how you want your profile page to look and what content to include.
-The page should contain:
-1. A Header: Includes your name and a brief tagline (e.g., "Aspiring Web
-Developer").
-2. A Section with a Profile Picture and About Me Text: Use a placeholder
-image or a real one.
-3. A Skills List: Include at least 3 skills presented in a list (ordered or
-unordered).
-4. A Footer: Add any additional information, such as a copyright message or a
-link to your GitHub profile.
-
-Step 2: Create the HTML Structure
-In your HTML file:
-1. Write semantic HTML using tags like <header>, <section>, <ul>/<ol>, and
-<footer>.
-2. Ensure your content is well-organized with meaningful IDs or classes for
-styling.
-
-Step 3: Write the External CSS File
-Create a separate CSS file to style your HTML:
-1. Link the CSS File: Use the <link> tag in the <head> section of your HTML file
-to connect the CSS.
-2. Add CSS Rules: Style the elements in your HTML file using element selectors,
-class selectors, and ID selectors. Focus on:
-○ Setting background colors.
-○ Adjusting text alignment, colors, and fonts.
-○ Adding spacing and padding to elements. -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,17 +10,27 @@ class selectors, and ID selectors. Focus on:
 <body>
 
 <header>
-    <h1>🌊 Meagan's Portfolio</h1>
-    <p class="subtitle">Future Software Developer</p>
+    <nav class="navigation">
+    <a href="#home" class="nav-button">Home</a>
+    <a href="#aboutMe" class="nav-button">About</a>
+    <a href="#skills_list" class="nav-button">Skills</a>
+    <a href="#projects" class="nav-button">Projects</a>
+    <a href="#contact_me" class="nav-button cta-button">Contact Me</a>
+  </nav>
 </header>
 
 <main>
+<section id="photo" class="image-container">
+    <img src="https://www.image2url.com/r2/default/images/1783177056262-663dd3c0-86fe-4080-9090-14fcf44ea539.jpeg"
+         alt="A photo of me in Hawaii">
 
-    <section id="about_me" class="card">
+    <div class="image-overlay">
+        <h2>Meagan Barfield</h2>
+    </div>
+</section>
+
+    <section id="aboutMe" class="card">
         <h2>About Me</h2>
-
-        <img src="https://www.image2url.com/r2/default/images/1783177056262-663dd3c0-86fe-4080-9090-14fcf44ea539.jpeg"
-             alt="A photo of me in Hawaii">
 
         <p class="about-me-text">
             My name is Meagan Barfield. I am from St. Louis, Missouri and I am currently enrolled in
@@ -77,6 +50,47 @@ class selectors, and ID selectors. Focus on:
             <li>Microsoft Applications</li>
         </ul>
     </section>
+    <section id="projects" class="card">
+        <h2>Current Projects</h2>
+    </section>
+    <section id="contact_me" class="card">
+        <h2>Contact Me</h2>
+        <form id="form_details" action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text"
+             id="name" 
+             name="fullname"
+            placeholder="Enter your full name"
+            required
+            minLength ="2"
+            maxlength="100">
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email"
+             id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
+            />
+
+            <br>
+
+<label for="message">Message</label>
+            <br>
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Send me a message..."
+                maxlength="500"></textarea>
+            <br>
+                <button type="submit">Submit</button>
+                </form>
+            </section>
+        <div id="success-banner" class="banner">
+            Thank you! 🎉
+        </div>
 
 </main>
 
@@ -87,6 +101,8 @@ class selectors, and ID selectors. Focus on:
         </a>
     </p>
 </footer>
+
+<script src= "portfolio.js" defer></script>
 
 </body>
 </html>
